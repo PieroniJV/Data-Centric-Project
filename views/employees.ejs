@@ -1,0 +1,28 @@
+<style>
+    table,
+    th,
+    td {
+        border: 2px solid black;
+        border-collapse: separate;
+    }
+</style>
+<table>
+    <tr>
+        <th>EID</th>
+        <th>Name</th>
+        <th>Role</th>
+        <th>Salary</th>
+        <th>Update</th>
+    </tr>
+
+    <% employees.forEach((employee) => {%>
+        <tr>
+            <td><%=employee.eid%></td>
+            <td><%=employee.ename%></td>
+            <td><%=employee.role%></td>
+            <td><%=employee.salary%></td>
+            <td><a href="/employees/edit/<%= employee.eid %>">Update</a></td>
+        </tr>
+    <%})%>
+    
+</table>
