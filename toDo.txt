@@ -1,0 +1,18 @@
+ExpressJS app that queries and updates a MySQL Database and a Mongo Database.
+routes to webpage:
+-> GET / 3 links: Employees-sql, Departments-sql, Employees-MongoDB
+-> GET /employees: shows details of all employees and has a button to update it.
+-> GET /employees/edit/:eid and POST /employees/edit/:eid:
+   When update button is pressed
+   EID cant change, Name has at least 5 characters, Role is either Manager or Employee, Salary is > 0
+   When successfully updated, redirect to GET /employees
+-> GET /depts: Shows dept info, has a delete button for each and a link back to GET /
+-> GET /depts/delete/:did: 
+    When delete button is pressed. Only if there is no associated employees with that department one can be deleted, otherwise, error message.
+-> GET /employeesMongoDB: Shows details, add employee button and a link back to main GET /
+-> GET /employeesMongoDB/add, POST /employeesMongoDB/add:
+    When add button is pressed. EID must be 4 characters and unique, phone must be > 5 characters and email must be a valid email
+    When successfully entered, redirect to GET /employeesMongoDB.
+    
+
+
