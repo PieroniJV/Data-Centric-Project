@@ -1,8 +1,9 @@
 <h1>Edit Employee</h1>
 
-<form action="http://localhost:3004/employees/edit/<%= employees.eid %>" method="post">
-    <label for="">EID</label><input type="text" readonly name="eid" id="eid">
-    <label for="">EID</label><input type="text" name="eid" id="eid">
-    <label for="">EID</label><input type="text" name="eid" id="eid">
-    <label for="">EID</label><input type="text" name="eid" id="eid">
+<form action="/employees/edit/<%= empId %>" method="post">
+    <label for="eid">EID</label><input type="text" readonly name="eid" id="<%= empId %>" value="<%= empId %>" ><br>
+    <label for="name">NAME</label><input type="text" name="name" id="<%= empName %>" value="<%= empName %>" ><br>
+    <label for="role">ROLE</label><input type="text" name="role" id="<%= empRole %>" value="<%= empRole %>" ><br>
+    <label for="salary">SALARY</label><input type="text" name="salary" id="<%= empSalary %>" value="<%= empSalary %>" ><br>
+    <input type="submit" value="Update">
 </form>
