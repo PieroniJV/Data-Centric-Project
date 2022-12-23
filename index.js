@@ -66,20 +66,27 @@ app.post('/employees/edit/:eid', (req, res) => {
         if (employee.eid == req.params.eid) {
             return employee
         } else {
-            
+
         }
     })
 
-    if (req.body.ename.length < 4) {
-        
-    } 
-    else if(req.body.role.toLowerCase() == role1 || req.body.role.toLowerCase() == role2)
-    {
-        
+    if (req.body.ename.length < 4) {//if new name has 5 or more characters 
+        if (req.body.role.toLowerCase() == role1 || req.body.role.toLowerCase() == role2) {//if the new role is one of the two options allowed
+            if (req.body.salary > -1) {// if new salary is a positive value
+                //update
+            }
+        }
     }
 })
 app.get('/depts', (req, res) => {
-    res.render('depts')
+    pool.query('SELECT * FROM dept')
+    .then((data) => {
+        employeeList = data
+        res.render('depts', { depts: data })
+    })
+    .catch(error => {
+        reject(error)
+    });
 })
 app.get('/depts/delete/:did', (req, res) => {
     res.render('delete')

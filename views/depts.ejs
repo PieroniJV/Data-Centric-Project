@@ -1,1 +1,30 @@
 <h1>This is the depts page</h1>
+<style>
+    table,
+    th,
+    td {
+        border: 2px solid black;
+        border-collapse: separate;
+    }
+</style>
+
+<table>
+    <tr>
+        <th>DID</th>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Budget</th>
+        <th>Delete</th>
+    </tr>
+
+    <% depts.forEach((dept) => {%>
+        <tr>
+            <td><%=dept.did%></td>
+            <td><%=dept.dname%></td>
+            <td><%=dept.lid%></td>
+            <td><%=dept.budget%></td>
+            <td><a href="/depts/delete/<%= dept.did %>">Delete</a></td>
+        </tr>
+    <%})%>
+    
+</table>
